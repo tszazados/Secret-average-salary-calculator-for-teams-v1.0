@@ -29,7 +29,6 @@ print "  TO USE AND CAN NOT HIDE THE ENTERED VALUES !!!!!!! " . CLNR_CODE ;
 print "*****************************************************" . CLNR_CODE ;
 
 //INITIALIZE VARIABLES...
-$stdInHandle   = fopen ("php://stdin","r") ;
 $normalizedSum = $inputCounter = 0 ;
 
 //STARTING THE LOOP FOR PROMPTING NUMERIC VALUES OR "exit" STRING...
@@ -38,7 +37,7 @@ while ( 1 === 1 && ( php_sapi_name ( ) === "cli" || defined ( "STDIN" ) ) )
     print "Enter your net(to) salary:  \033[33m " . ( $inputCounter===0 ? "( for example: \"100000\" if yours is 100.000 HUF )\033[0m \n" : "\n" ) ;
     print "\033[36m ({$inputCounter})> \033[0m " ;
 
-    $inputStr = trim ( fgets ( $stdInHandle ) ) . "" ;
+    $inputStr = PHP_OS == "WINNT" ? stream_get_line(STDIN, 1024, PHP_EOL) : readline ("") ;
     
     // EXIT CASE, BREAKING THE LOOP IF "exit" GIVEN
     if ( in_array ( strtoupper ( $inputStr ),  [ "EXIT", "Q", "X", "BYE", "QUIT" ] ) === TRUE ) 
@@ -72,4 +71,3 @@ while ( 1 === 1 && ( php_sapi_name ( ) === "cli" || defined ( "STDIN" ) ) )
 }
 
 die("This program can run in only from Command Line (CLI). Aborting. ") ;
-
