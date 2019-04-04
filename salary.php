@@ -64,7 +64,7 @@ while ( 1 === 1 && ( php_sapi_name ( ) === "cli" || defined ( "STDIN" ) ) )
     else
     {
         
-        print "\033[31m ???????Invalid integer value.\033[0m \n" ;
+        print "\033[31m ???????Invalid integer value. Type 'exit' to finish or ^C to abort. \033[0m \n" ;
         
     }
     
