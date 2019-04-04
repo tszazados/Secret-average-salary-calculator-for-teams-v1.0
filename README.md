@@ -13,3 +13,12 @@ Cool, isn't it?
 Source code is dirt simple on purpose for easy checking not to be tricked on.
 
 ;-)
+
+Usage:
+ Run from CLI (Cmd.exe) with the following command:
+ 
+ php salary.php
+ 
+( Note: php executable must be installed and reachable. )
+ 
+ 
